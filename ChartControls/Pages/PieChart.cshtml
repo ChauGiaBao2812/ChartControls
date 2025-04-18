@@ -24,12 +24,7 @@
                                yName="OnlineSale"
                                name="Online">
 
-            <!-- Hiển thị phần trăm trong nhãn trên biểu đồ -->
-            <e-accumulationseries-datalabel visible="true"
-                                            position="Inside"
-                                            labelFormat="${point.percentage}%"
-                                            name="OnlineSale">
-            </e-accumulationseries-datalabel>
+            
 
         </e-accumulation-series>
     </e-accumulation-series-collection>
@@ -52,6 +47,10 @@
 
     <form method="get" action="/LineChart">
         <button type="submit" class="btn btn-success">Chuyển sang LineChart</button>
+    </form>
+
+    <form method="get" action="/DashBoard">
+        <button type="submit" class="btn btn-success">Bảng doanh thu</button>
     </form>
 </div>
 
