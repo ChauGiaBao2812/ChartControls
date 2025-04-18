@@ -6,6 +6,7 @@ namespace ChartControls.Pages
 {
     public class PieChartModel : PageModel
     {
+        public List<LayoutData> SalesData { get; set; } = SharedData.SalesData;
         public void OnGet()
         {
         }
