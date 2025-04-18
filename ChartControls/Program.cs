@@ -21,6 +21,15 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/LineChart");
+    return Task.CompletedTask;
+});
+
 app.MapRazorPages();
 
+
 app.Run();
+
+
