@@ -3,28 +3,19 @@
 @{
 }
 
-<ejs-chart id="chart" title="Sales data">
-    <e-chart-primaryxaxis valueType=Category
-                          title="Period"></e-chart-primaryxaxis>
-    <e-chart-primaryyaxis title="Quantity"></e-chart-primaryyaxis>
-    <e-chart-legendsettings visible=true></e-chart-legendsettings>
-    <e-chart-tooltipsettings enable=true></e-chart-tooltipsettings>
-    <e-series-collection>
-        <e-series typeof="Line" dataSource="@Model.SalesData"
-                  name="OnLine"
-                  xName="Period"
-                  yName="OnlineSale">
-            <e-series-marker visible=true>
-                <e-series-datalabel visible=false></e-series-datalabel>
-            </e-series-marker>
-        </e-series>
-        <e-series typeof="Line" dataSource="@Model.SalesData"
-                  name="Retail"
-                  xName="Period"
-                  yName="RetailSale">
-            <e-series-marker visible=true>
-                <e-series-datalabel visible=false></e-series-datalabel>
-            </e-series-marker>
-        </e-series>
-    </e-series-collection>
-</ejs-chart>
+<h3>Online Sale</h3>
+
+<ejs-accumulationchart id="chart" title="Pie Chart Sale">
+    <e-accumulationchart-tooltipsettings enable=true></e-accumulationchart-tooltipsettings>
+    <e-accumulation-series-collection>
+        <e-accumulation-series type="Pie"
+                               dataSource="@Model.SalesData"
+                               xName="Period"
+                               yName="OnlineSale">
+            <e-accumulationseries-datalabel visible=true></e-accumulationseries-datalabel>
+        </e-accumulation-series>
+
+            <e-accumulation-data-labels visible=true></e-accumulation-data-labels>
+    </e-accumulation-series-collection>
+</ejs-accumulationchart>
+
