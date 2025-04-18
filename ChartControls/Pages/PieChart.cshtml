@@ -5,6 +5,7 @@
 
 <h3>Online Sale</h3>
 
+
 <ejs-accumulationchart id="chart" title="Pie Chart Sale">
     <e-accumulationchart-tooltipsettings enable=true></e-accumulationchart-tooltipsettings>
     <e-accumulation-series-collection>
@@ -19,13 +20,22 @@
     </e-accumulation-series-collection>
 </ejs-accumulationchart>
 
-<form method="get" action="/CoreChart">
-    <button type="submit" class="btn btn-success">Chuyển sang CoreChart</button>
-</form>
-<br />
+<style>
+    .center-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>
 
-<form method="get" action="/LineChart">
-    <button type="submit" class="btn btn-success">Chuyển sang LineChart</button>
-</form>
+<div class="center-buttons">
+    <form method="get" action="/CoreChart">
+        <button type="submit" class="btn btn-success">Chuyển sang CoreChart</button>
+    </form>
+
+    <form method="get" action="/LineChart">
+        <button type="submit" class="btn btn-success">Chuyển sang LineChart</button>
+    </form>
+</div>
 
 
