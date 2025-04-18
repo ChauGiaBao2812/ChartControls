@@ -5,7 +5,7 @@ namespace ChartControls.Pages;
 public class LayoutData
 {
     public string? Period { get; set; }
-    public double? Online { get; set; }
+    public double? OnlinePercentage { get; set; }
     public double? RetailPercentage { get; set; }
 }
 public class IndexModel : PageModel
