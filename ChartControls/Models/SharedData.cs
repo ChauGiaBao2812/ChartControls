@@ -5,18 +5,19 @@ public static class SharedData
 {
     public static List<LayoutData> SalesData =>
     [
-        new LayoutData{ Period = "Jan", OnlineSale = 36, RetailSale = 64 },
-        new LayoutData{ Period = "Feb", OnlineSale = 62, RetailSale = 38 },
-        new LayoutData{ Period = "Mar", OnlineSale = 81, RetailSale = 19 },
-        new LayoutData{ Period = "Apr", OnlineSale = 59, RetailSale = 41 },
-        new LayoutData{ Period = "May", OnlineSale = 89, RetailSale = 11 },
-        new LayoutData{ Period = "Jun", OnlineSale = 72, RetailSale = 28 },
-        new LayoutData{ Period = "Jul", OnlineSale = 43, RetailSale = 57 },
-        new LayoutData{ Period = "Aug", OnlineSale = 46, RetailSale = 54 },
-        new LayoutData{ Period = "Sep", OnlineSale = 55, RetailSale = 45 },
-        new LayoutData{ Period = "Oct", OnlineSale = 63, RetailSale = 37 },
-        new LayoutData{ Period = "Nov", OnlineSale = 57, RetailSale = 43 },
-        new LayoutData{ Period = "Dec", OnlineSale = 80, RetailSale = 20 }
+        new LayoutData{ Period = "Jan", OnlineSale = 45, RetailSale = 55 },
+        new LayoutData{ Period = "Feb", OnlineSale = 50, RetailSale = 60 },
+        new LayoutData{ Period = "Mar", OnlineSale = 80, RetailSale = 45 },
+        new LayoutData{ Period = "Apr", OnlineSale = 40, RetailSale = 70 },
+        new LayoutData{ Period = "May", OnlineSale = 75, RetailSale = 30 },
+        new LayoutData{ Period = "Jun", OnlineSale = 85, RetailSale = 25 },
+        new LayoutData{ Period = "Jul", OnlineSale = 60, RetailSale = 40 },
+        new LayoutData{ Period = "Aug", OnlineSale = 55, RetailSale = 65 },
+        new LayoutData{ Period = "Sep", OnlineSale = 70, RetailSale = 50 },
+        new LayoutData{ Period = "Oct", OnlineSale = 60, RetailSale = 50 },
+        new LayoutData{ Period = "Nov", OnlineSale = 65, RetailSale = 55 },
+        new LayoutData{ Period = "Dec", OnlineSale = 90, RetailSale = 35 }
+
     ];
 }
 

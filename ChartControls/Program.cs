@@ -23,7 +23,7 @@ app.UseAuthorization();
 
 app.MapGet("/", context =>
 {
-    context.Response.Redirect("/LineChart");
+    context.Response.Redirect("/DashBoard");
     return Task.CompletedTask;
 });
 

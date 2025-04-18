@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Bảng Doanh Thu";
+}
+
+<h3 class="text-center">Bảng Doanh Thu Theo Tháng</h3>
+
+<table class="table table-bordered table-striped text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>Tháng (Period)</th>
+            <th>Online Sale</th>
+            <th>Retail Sale</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SalesData)
+        {
+            <tr>
+                <td>@item.Period</td>
+                <td>@item.OnlineSale</td>
+                <td>@item.RetailSale</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<style>
+    .center-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>
+<div class="center-buttons">
+    <form method="get" action="/PieChart">
+        <button type="submit" class="btn btn-success">Chuyển sang PieChart</button>
+    </form>
+
+    <form method="get" action="/LineChart">
+        <button type="submit" class="btn btn-success">Chuyển sang LineChart</button>
+    </form>
+
+    <form method="get" action="/CoreChart">
+        <button type="submit" class="btn btn-success">Chuyển sang CoreChart</button>
+    </form>
+</div>
+
