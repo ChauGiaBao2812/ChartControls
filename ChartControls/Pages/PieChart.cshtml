@@ -3,22 +3,39 @@
 @{
 }
 
-<h3>Online Sale</h3>
+<h3>Online - Retail Sale</h3>
 
+<!-- Dropdown chọn loại dữ liệu -->
+<div class="text-center mb-3">
+    <select id="saleTypeSelect" onchange="updatePieChart()" class="form-select w-auto mx-auto">
+        <option value="OnlineSale" selected>Online Sale</option>
+        <option value="RetailSale">Retail Sale</option>
+    </select>
+</div>
 
 <ejs-accumulationchart id="chart" title="Pie Chart Sale">
-    <e-accumulationchart-tooltipsettings enable=true></e-accumulationchart-tooltipsettings>
+    <!-- Tooltip hiển thị phần trăm -->
+    <e-accumulationchart-tooltipsettings enable="true" format="${point.x} : ${point.percentage}%"></e-accumulationchart-tooltipsettings>
+
     <e-accumulation-series-collection>
         <e-accumulation-series type="Pie"
                                dataSource="@Model.SalesData"
                                xName="Period"
-                               yName="OnlineSale">
-            <e-accumulationseries-datalabel visible=true></e-accumulationseries-datalabel>
-        </e-accumulation-series>
+                               yName="OnlineSale"
+                               name="Online">
 
-            <e-accumulation-data-labels visible=true></e-accumulation-data-labels>
+            <!-- Hiển thị phần trăm trong nhãn trên biểu đồ -->
+            <e-accumulationseries-datalabel visible="true"
+                                            position="Inside"
+                                            labelFormat="${point.percentage}%"
+                                            name="OnlineSale">
+            </e-accumulationseries-datalabel>
+
+        </e-accumulation-series>
     </e-accumulation-series-collection>
 </ejs-accumulationchart>
+
+
 
 <style>
     .center-buttons {
@@ -37,5 +54,20 @@
         <button type="submit" class="btn btn-success">Chuyển sang LineChart</button>
     </form>
 </div>
+
+<!-- Script thay đổi biểu đồ -->
+@section Scripts {
+    <script>
+        function updatePieChart() {
+            var chart = document.getElementById("chart").ej2_instances[0];
+            var selectedYName = document.getElementById("saleTypeSelect").value;
+
+            chart.series[0].yName = selectedYName;
+            chart.series[0].name = selectedYName === "OnlineSale" ? "Online" : "Retail";
+
+            chart.refresh();
+        }
+    </script>
+}
 
 

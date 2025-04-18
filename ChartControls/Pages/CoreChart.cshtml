@@ -28,3 +28,22 @@
         </e-series>
     </e-series-collection>
 </ejs-chart>
+
+
+<style>
+    .center-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>
+
+<div class="center-buttons">
+    <form method="get" action="/PieChart">
+        <button type="submit" class="btn btn-success">Chuyển sang PieChart</button>
+    </form>
+
+    <form method="get" action="/LineChart">
+        <button type="submit" class="btn btn-success">Chuyển sang LineChart</button>
+    </form>
+</div>
