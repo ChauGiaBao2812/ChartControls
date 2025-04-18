@@ -3,12 +3,28 @@
 @{
 }
 <ejs-chart id="chart" title="Sales - Yearly Performance">
-    <e-chart-primaryxaxis valueType=Category></e-chart-primaryxaxis>
+    <e-chart-primaryxaxis valueType="Category" title="Month"></e-chart-primaryxaxis>
     <e-chart-primaryyaxis title="Sales"></e-chart-primaryyaxis>
+    <e-chart-legendsettings visible=true></e-chart-legendsettings>
+    <e-chart-tooltipsettings enable=true></e-chart-tooltipsettings>
     <e-series-collection>
         <e-series type="Column"
                   dataSource="@Model.SalesData"
+                  name="Online"
                   xName="Period"
-                  yName="OnlineSale"></e-series>
+                  yName="OnlineSale">
+            <e-series-marker visible=true>
+                <e-series-datalabel visible=true></e-series-datalabel>
+            </e-series-marker>
+        </e-series>
+        <e-series type="Column"
+                  dataSource="@Model.SalesData"
+                  name="Retail"
+                  xName="Period"
+                  yName="RetailSale">
+            <e-series-marker visible=true>
+                <e-series-datalabel visible=true></e-series-datalabel>
+            </e-series-marker>
+        </e-series>
     </e-series-collection>
 </ejs-chart>
