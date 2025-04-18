@@ -22,15 +22,27 @@
 
 
 <ejs-chart id="chart">
-    <e-chart-primaryxaxis valueType=Category></e-chart-primaryxaxis>
+    <e-chart-primaryxaxis valueType=Category 
+                          title="Period"></e-chart-primaryxaxis>
+    <e-chart-primaryyaxis title="Sales Percentage"></e-chart-primaryyaxis>
+    <e-chart-legendsettings visible=true ></e-chart-legendsettings>
+    <e-chart-tooltipsettings enable=true></e-chart-tooltipsettings>
     <e-series-collection>
         <e-series typeof="Line" dataSource="SalesData"
+                  name="OnLine"
                   xName="Period"
                   yName="OnlinePercentage">
+                  <e-series-marker visible=true>
+                      <e-series-datalabel visible=false></e-series-datalabel>
+                  </e-series-marker>
         </e-series>
         <e-series typeof="Line" dataSource="SalesData"
+                  name="Retail"
                   xName="Period"
                   yName="RetailPercentage">
+            <e-series-marker visible=true>
+                <e-series-datalabel visible=false></e-series-datalabel>
+            </e-series-marker>
         </e-series>
     </e-series-collection>
 </ejs-chart>
