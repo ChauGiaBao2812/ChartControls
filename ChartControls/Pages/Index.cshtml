@@ -4,4 +4,14 @@
     ViewData["Title"] = "Home page";
 }
 
-<ejs-chart id="chart"></ejs-chart>
+<ejs-chart id="chart">
+    <e-chart-primaryxaxis valueType=Category></e-chart-primaryxaxis>
+    <e-series-collection>
+        <e-series typeof="Line" dataSource="SalesData"
+        xName="Period"
+        yName="OnLinePercentage"></e-series>
+        <e-series typeof="Line" dataSource="SalesData"
+        xName="Period"
+        yName="OnLinePercentage"></e-series>
+    </e-series-collection>
+</ejs-chart>
