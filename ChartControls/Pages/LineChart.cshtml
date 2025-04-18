@@ -21,6 +21,7 @@
 }
 
 
+
 <ejs-chart id="chart" title="Sales data">
     <e-chart-primaryxaxis valueType=Category 
                           title="Period"></e-chart-primaryxaxis>
@@ -46,4 +47,35 @@
         </e-series>
     </e-series-collection>
 </ejs-chart>
+
+<ejs-chart id="chart" title="Sales data">
+    <e-chart-primaryxaxis valueType=Category
+                          title="Period"></e-chart-primaryxaxis>
+    <e-chart-primaryyaxis title="Quantity"></e-chart-primaryyaxis>
+    <e-chart-legendsettings visible=true></e-chart-legendsettings>
+    <e-chart-tooltipsettings enable=true></e-chart-tooltipsettings>
+    <e-series-collection>
+        <e-series typeof="Line" dataSource="SalesData"
+                  name="OnLine"
+                  xName="Period"
+                  yName="OnlineSale">
+            <e-series-marker visible=true>
+                <e-series-datalabel visible=false></e-series-datalabel>
+            </e-series-marker>
+        </e-series>
+        <e-series typeof="Line" dataSource="SalesData"
+                  name="Retail"
+                  xName="Period"
+                  yName="RetailSale">
+            <e-series-marker visible=true>
+                <e-series-datalabel visible=false></e-series-datalabel>
+            </e-series-marker>
+        </e-series>
+    </e-series-collection>
+</ejs-chart>
+
+
+
+
+
 
