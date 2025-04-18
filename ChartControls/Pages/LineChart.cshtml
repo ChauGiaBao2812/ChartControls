@@ -1,0 +1,82 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    List<LayoutData> SalesData = new List<LayoutData>()
+    {
+        new LayoutData{ Period = "Jan", OnlineSale = 36, RetailSale = 64 },
+        new LayoutData{ Period = "Feb", OnlineSale = 62, RetailSale = 38 },
+        new LayoutData{ Period = "Mar", OnlineSale = 81, RetailSale = 19 },
+        new LayoutData{ Period = "Apr", OnlineSale = 59, RetailSale = 41 },
+        new LayoutData{ Period = "May", OnlineSale = 89, RetailSale = 11 },
+        new LayoutData{ Period = "Jun", OnlineSale = 72, RetailSale = 28 },
+        new LayoutData{ Period = "Jul", OnlineSale = 43, RetailSale = 57 },
+        new LayoutData{ Period = "Aug", OnlineSale = 46, RetailSale = 54 },
+        new LayoutData{ Period = "Sep", OnlineSale = 55, RetailSale = 45 },
+        new LayoutData{ Period = "Oct", OnlineSale = 63, RetailSale = 37 },
+        new LayoutData{ Period = "Nov", OnlineSale = 57, RetailSale = 43 },
+        new LayoutData{ Period = "Dec", OnlineSale = 80, RetailSale = 20 }
+
+    };
+}
+
+@* <select id="chartSelect" onchange="updateChart()"> *@
+@*     <option value="OnlineSale">Online Sale</option> *@
+@*     <option value="RetailSale">Retail Sale</option> *@
+@* </select> *@
+
+@* <ejs-chart id="chart" title="Sales data"> *@
+@*     <e-chart-primaryxaxis valueType=Category  *@
+@*                           title="Period"></e-chart-primaryxaxis> *@
+@*     <e-chart-primaryyaxis title="Quantity"></e-chart-primaryyaxis> *@
+@*     <e-chart-legendsettings visible=true ></e-chart-legendsettings> *@
+@*     <e-chart-tooltipsettings enable=true></e-chart-tooltipsettings> *@
+@*     <e-series-collection> *@
+@*         <e-series typeof="Line" dataSource="SalesData" *@
+@*                   name="OnLine" *@
+@*                   xName="Period" *@
+@*                   yName="OnlineSale"> *@
+@*                   <e-series-marker visible=true> *@
+@*                       <e-series-datalabel visible=false></e-series-datalabel> *@
+@*                   </e-series-marker> *@
+@*         </e-series> *@
+@*         <e-series typeof="Line" dataSource="SalesData" *@
+@*                   name="Retail" *@
+@*                   xName="Period" *@
+@*                   yName="RetailSale"> *@
+@*             <e-series-marker visible=true> *@
+@*                 <e-series-datalabel visible=false></e-series-datalabel> *@
+@*             </e-series-marker> *@
+@*         </e-series> *@
+@*     </e-series-collection> *@
+@* </ejs-chart> *@
+
+<ejs-chart id="chart" title="Sales - Yearly Performance">
+    <e-chart-primaryxaxis valueType=Category></e-chart-primaryxaxis>
+    <e-chart-primaryyaxis title="Sales"></e-chart-primaryyaxis>
+    <e-series-collection>
+        <e-series type="Column"
+                  dataSource="SalesData"
+                  xName="Period"
+                  yName="OnlineSale"></e-series>
+    </e-series-collection>
+</ejs-chart>
+
+@* <script> *@
+@*     // Function to update chart based on dropdown selection *@
+@*     function updateChart() { *@
+@*         var selectedValue = document.getElementById('chartSelect').value; *@
+
+@*         var updatedSeries = { *@
+@*             name: selectedValue, *@
+@*             xName: 'Period', *@
+@*             yName: selectedValue *@
+@*         }; *@
+
+@*         // Update the chart data *@
+@*         var chart = document.getElementById('chart').ej2_instances[0]; *@
+@*         chart.series[0].name = updatedSeries.name; *@
+@*         chart.series[0].yName = updatedSeries.yName; *@
+@*         chart.refresh(); *@
+@*     } *@
+@* </script> *@
